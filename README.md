@@ -3,9 +3,11 @@ A collection of scripts for making adjustments and improvements to Windows.
 
 ## Task 1
 Identify possible issue (mitigate with that) and necessary improvements in the `bat`/`ntfs.bat` script.
+You don't have all info, as author of that script is on vacation.
 
 ## Task 2
-Locate bugs and suggest needed enhancements for the `powershell`/`ntfs.bat` script.
+Someone converted configs into powershell and you need to locate bugs 
+and suggest needed enhancements for the `powershell`/`ntfs.bat` script.
 
 ## Task 3
 The security and Windows team have provided you with a regedit file `regedit`/`general_tweaks.reg` to make enhancements for Windows Server 2022/2019.
@@ -24,3 +26,12 @@ There are no new entries in your change logs, and no changes at the virtualizati
 
 2. How to troubleshoot if vmtoolsd.exe is calling a function and the symbols hub is showing some errors.
    Hints: Check the configurations in the xperf folder and make a pull request adding +1 symbol server that allocates VMware Tools PDB.
+
+
+## Task 5
+Your colleague has asked you to validate policy from [CIS Benchmarks](https://downloads.cisecurity.org/#/) for Windows Server 2022 for your production servers.
+You have to describe following details:
+- Process of enrollment (dev-test-stage-preprod-prod)
+- Policy validation procedure (perftest-sec-test-benchmark-test)
+- Report generation (how it will be better to provide)
+or provide alternative solution.
