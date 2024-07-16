@@ -2,13 +2,13 @@
 A collection of scripts for making adjustments and improvements to Windows.
 
 ## Task 1
-Identify possible issue (mitigate with that) and necessary improvements in the `ntfs.bat` script.
+Identify possible issue (mitigate with that) and necessary improvements in the `bat`/`ntfs.bat` script.
 
 ## Task 2
-Locate bugs and suggest needed enhancements for the `ntfs.bat` script.
+Locate bugs and suggest needed enhancements for the `powershell`/`ntfs.bat` script.
 
 ## Task 3
-The security and Windows team have provided you with a regedit file to make enhancements for Windows Server 2022/2019.
+The security and Windows team have provided you with a regedit file `regedit`/`general_tweaks.reg` to make enhancements for Windows Server 2022/2019.
 Ensure that you backup your registry before applying this file.
 Carefully review all parameters before applying the file and add at least 3-4 improvements.
 Additionally, provide explanations for each enhancement.
