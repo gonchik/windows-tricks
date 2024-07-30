@@ -14,4 +14,7 @@ Invoke-Command -ScriptBlock { fsutil behavior set Disable8dot3 1 }
 # Disable compression of NTFS
 Invoke-Command -ScriptBlock { fsutil behavior set DisableCompression 1 }
 
+
+# Recommendation to read https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.4
+# Think about work load of server and think about "restart" ;)
 Write-Host "Now you can reboot"
