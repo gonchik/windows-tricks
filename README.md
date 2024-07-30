@@ -7,7 +7,7 @@ You don't have all info, as author of that script is on vacation.
 
 ## Task 2
 Someone converted configs into powershell and you need to locate bugs 
-and suggest needed enhancements for the `powershell`/`ntfs.bat` script.
+and suggest needed enhancements for the `powershell`/`ntfs.ps1` script.
 
 ## Task 3
 The security and Windows team have provided you with a regedit file `regedit`/`general_tweaks.reg` to make enhancements for Windows Server 2022/2019.
