@@ -1,0 +1,7 @@
+The options for implementation and testing are different and depend on the company environment and services used.
+In my case, the scheme of rolling out changes through DEV environment, then QA, Pre-production, and Production is used.
+The change is tested in each of the environments and if the tests are successful, the change will be deploy in the next one.
+It's possible to apply changes by writing DSC configurations; there are standard DSC resources for operating with registry branches, services, and files.
+You can roll out changes by using GPO or Microsoft SCCM.
+The implementation is controlled by running Pester tests on servers or collecting reports from servers. In the case of SCCM, it is controlled by the task executive conditions.
+Checking the impact of changes by testing production systems and measuring server performance parameters before and after applying the change.
