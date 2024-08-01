@@ -1,0 +1,10 @@
+The mftzone, disablelastaccess, DisableCompression parameters require a server reboot. Deployment should be performed during the maintenance window.
+Before implementing the disablelastaccess, disable8dot3 settings, it is necessary to test them with the backup system that is used.
+
+The task does not say in what environment the script will be deployed. The path to apply the script and other necessary steps depend on the environment.
+If it is a small environment for 2-3 servers, then there will be one set of steps and parameters that need to be monitored and taken into account.
+If it is a large set of servers, then the path to apply will be different.
+I do not see any errors in the script itself, but there are many nuances that depend on the environment in which it is used.
+The command executed in the script does not perform any actions that can cause a spontaneous reboot of the server.
+This command sets the keys in the registry, which can also be set manually or through group policy.
+To apply the changes, a manual reboot of the server is required.

@@ -13,4 +13,9 @@ fsutil behavior set disable8dot3 1
 REM Disable compression of NTFS
 fsutil behavior set DisableCompression 1
 
+REM In case the FileServer this change may have a sense
+fsutil behavior set memoryusage 2
+
 echo now you can reboot
+REM Reboot the server
+REM shutdown /r /t 0 /d p:2:4

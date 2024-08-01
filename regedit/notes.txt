@@ -1,0 +1,2 @@
+The set of parameters for optimization depends on the server role used.
+Custom registry parameters increase the user registry hive and can affect the user login process.
