@@ -61,6 +61,7 @@ Windows Registry Editor Version 5.00
 "CortanaConsent"=dword:00000000  ; Disables Cortana consent.
 
 ;Disable mitigations.
+; Disable the fix for CVE-2017-5715 и CVE-2017-5754 (Spectre и Meltdown), which significantly decrease CPU performance, especially on the old CPU series.
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
 "FeatureSettings"=dword:00000000  ; Disables certain memory management features.
 "FeatureSettingsOverrideMask"=dword:00000003  ; Custom setting for feature settings override mask.
@@ -69,8 +70,9 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Kernel]
 "DisableTsx"=dword:00000001  ; Disables Transactional Synchronization Extensions (TSX).
 
+; This is only valid for Hyper-V hosts on Windows 2012 and below. I think it is not necessary on the guest VM and the last versions of Hyper-V Windows Server hosts.
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization]
--"MinVmVersionForCpuBasedMitigations"="1.0"  ; Deletes minimum VM version for CPU-based mitigations.
+"MinVmVersionForCpuBasedMitigations"=-  ; Deletes minimum VM version for CPU-based mitigations.
 
 ;Disable Power Throttling.
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling]
@@ -97,5 +99,22 @@ Windows Registry Editor Version 5.00
 "UseOLEDTaskbarTransparency"=dword:00000001  ; Increases taskbar transparency level.
 
 ;Disables app suggestions on start.
+; Only valid for Desktop OS. There is no need for the Server OS
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
 "DisableWindowsConsumerFeatures"=dword:00000001  ; Disables Windows Consumer Features suggestions.
+
+;Disable Indexing Service
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\cisvc]
+"Start"=dword:00000004
+
+Disable Background Layout Service
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OptimalLayout]
+"EnableAutoLayout"=dword:00000000
+
+;Disable NTFS last access timestamps
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem]
+"NtfsDisableLastAccessUpdate"=dword:00000001
+
+;Increase Disk I/O Timeout to 200 seconds. Actual for VMs
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Disk]
+"TimeOutValue"=dword:000000c8
