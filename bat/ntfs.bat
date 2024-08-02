@@ -1,16 +1,23 @@
-REM  Let's increase NTFS MFT zone size
-REM All info there https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/fsutil-behavior
-fsutil behavior set mftzone 3
+REM This command defines how much space the Master File Table should allocate from the volume. It is beneficial to tune in case if many files are stored on the volume.
+REM To check the current value the nfutil.exe (or "fsutil fsinfo ntfsinfo X:") can be used.
+REM To prevent MFT to run out of space and avoid fragmentation its the value can be changed. The default is 1 (12.5%).
+REM I suggest to set it to 2 initially as it doubles the size of the MFT allocation.
 
-REM disable last access time on all files
+fsutil behavior set mftzone 2
+
+
+REM This command eliminates unnecessary write operations to the "Last Access Time" attribute for frequently used files on the volume.
+REM Once changed, the attribute will show only their time of creation. May affect operation of backup softwares that use Remote Storage Service.
+
 fsutil behavior set disablelastaccess 1
 
-REM http://archive.oreilly.com/cs/user/view/cs_msg/95219 (some installers need 8dot3 filenames)
-REM disable 8dot3 filenames
-REM Warning: Some applications such as incremental backup utilities rely on this update information and do not function correctly without it.
+REM This command disables short (8.3) filenames. The performance may be noticeable only on volumes with large number of files. Needs to be tested for compatibility with the old software.
+
 fsutil behavior set disable8dot3 1
 
-REM Disable compression of NTFS
+
+REM Disabling compression on NTFS drive may decrease CPU usage by removing the need to compress files
+
 fsutil behavior set DisableCompression 1
 
 echo now you can reboot
