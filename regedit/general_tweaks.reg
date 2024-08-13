@@ -118,3 +118,23 @@ Disable Background Layout Service
 ;Increase Disk I/O Timeout to 200 seconds. Actual for VMs
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Disk]
 "TimeOutValue"=dword:000000c8
+
+;Disable Windows Update
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP\Parameters]
+"EnableErrorLogging"=dword:00000000
+
+;Wait To Kill Service Timeout
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+"WaitToKillServiceTimeout"="300000"
+
+; TCP Timed Wait Delay
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TcpIp\Parameters]
+"TcpTimedWaitDelay"=dword:0000001E
+
+; TCP Fin Wait 2 Delay
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TcpIp\Parameters]
+"TcpFinWait2Delay"=dword:0000001E
+
+; Strict Time Wait Sequence Check
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TcpIp\Parameters]
+"StrictTimeWaitSeqCheck"=dword:00000001
