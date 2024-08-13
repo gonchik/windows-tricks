@@ -138,3 +138,15 @@ Disable Background Layout Service
 ; Strict Time Wait Sequence Check
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TcpIp\Parameters]
 "StrictTimeWaitSeqCheck"=dword:00000001
+
+; Set TcpMaxDupAcks
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TcpIp\Parameters]
+"TcpMaxDupAcks"=dword:00000002
+
+; Set SackOpts ; https://docs.nvidia.com/networking/display/winof2v290/performance+tuning
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TcpIp\Parameters]
+"SackOpts"=dword:00000000
+
+; Enable fast datagram sending for UDP traffic
+; [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters]
+; "FastSendDatagramThreshold"=dword:000005DC
