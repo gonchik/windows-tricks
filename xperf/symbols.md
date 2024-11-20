@@ -59,4 +59,7 @@ srv*C:\gon4ik\symbols*http://boinc.bakerlab.org/rosetta/symstore/
 srv*C:\gon4ik\symbols*https://symbols.dolphin-emu.org/
 srv*C:\gon4ik\symbols*https://symweb.corp.microsoft.com/
 srv*C:\gon4ik\symbols*https://www.openfabrics.org/downloads/Windows/latest/SymStor/
+srv*C:\gon4ik\symbols*https://www.nvaccess.org/files/nvda/symbols
+srv*C:\gon4ik\symbols*https://driver-symbols.nvidia.com
+srv*C:\gon4ik\symbols*https://clients2.google.com/cr/staging_symbol
 ```
